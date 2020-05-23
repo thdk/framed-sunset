@@ -12,7 +12,7 @@
  Text Domain:  thdk-framed-sunset
 */
 
-body.featured-image-in-header:not(.title-tagline-hidden) .site-branding-text {   
+body.featured-image-in-header:not(.title-tagline-hidden) .site-branding-text {
 /*
     padding: 1em;
     border: solid 2px #ababab;
@@ -87,7 +87,7 @@ body:not(.twentyseventeen-front-page):not(.home) .site-title a, body:not(.twenty
 }
 
 .wrap.space-top {
-        padding-top: 1em;       
+        padding-top: 1em;
  }
 
 .clear {
@@ -214,7 +214,7 @@ h3.like-title {
 }
  .navigator .navigation-inner {
      position: relative;
-     display: block 
+     display: block
 }
  .navigator .prev-holder, .navigator .next-holder {
      position: relative;
@@ -222,13 +222,13 @@ h3.like-title {
      table-layout: fixed;
      height: 100%;
      width: 100%;
-     width: 50% 
+     width: 50%
 }
  .navigator .prev-holder {
-     float: left 
+     float: left
 }
  .navigator .next-holder {
-     float: right 
+     float: right
 }
  .navigator .prev, .navigator .next {
      position: relative;
@@ -242,7 +242,7 @@ h3.like-title {
      position: relative;
      -webkit-border-radius: 50%;
      -moz-border-radius: 50%;
-     border-radius: 50% 
+     border-radius: 50%
 }
 
 .navigator .prev a, .navigator .prev a img, .navigator .next a, .navigator .next a img {
@@ -258,37 +258,37 @@ h3.like-title {
      width: 100%;
      vertical-align: middle;
      text-align: center;
-     box-sizing: border-box 
+     box-sizing: border-box
 }
  .navigator .prev-info {
-     text-align: left 
+     text-align: left
 }
  .navigator .next-info {
-     text-align: right 
+     text-align: right
 }
  .navigator .navigation-info-holder {
      line-height: normal;
-     position: relative 
+     position: relative
 }
  .navigator .navigation-info {
      font-size: 12px;
      line-height: 1em;
      color: #000;
      text-transform: uppercase;
-     letter-spacing: 1px 
+     letter-spacing: 1px
 }
 
  .navigator .navigation-icon {
      font-size: 16px;
      color: #000;
     position: absolute;
-    top: 7px 
+    top: 7px
 }
  .next .navigation-icon {
-     right: -50px 
+     right: -50px
 }
  .prev .navigation-icon {
-     left: -50px 
+     left: -50px
 }
  .navigator a.av-title {
      display: block;
@@ -296,7 +296,7 @@ h3.like-title {
      line-height: normal;
      color: #797979;
      font-family: "Noto Serif", serif;
-     margin-top: 1px 
+     margin-top: 1px
 }
 
 span.arrow_carrot-right.navigation-icon {
@@ -384,27 +384,31 @@ span.arrow_carrot-left.navigation-icon {
     float: left;
 }
 
-.entry-footer .cat-links, .entry-footer .location-links {
+.entry-footer .cat-links, .entry-footer .location-links, .entry-footer .parent-links {
     display: block;
     font-size: 11px;
     font-size: 0.6875rem;
     font-weight: 800;
     letter-spacing: 0.1818em;
-    padding-left: 2.5em;
+    padding: 2px 0 2px 2.5em;
     position: relative;
     text-transform: uppercase;
     float: left;
+    width: 100%;
 }
 
 .entry-footer .cat-links {
     margin-right: 2.5em;
 }
 
-.entry-footer .location-links { 
+.entry-footer .location-links,
+.entry-footer .parent-links {
     padding-left: 0;
 }
 
-.entry-footer .location-links .location-icon {
+.entry-footer .location-links .location-icon,
+.entry-footer .parent-links .parent-icon
+ {
     width: 16px;
     height: 16px;
     opacity: 0.8;
@@ -465,21 +469,20 @@ div.sharedaddy h3.sd-title:before {
 }
 
 .item-container .tile {
-    display: inherit;    
+    display: inherit;
     margin-bottom: 1em;
     border-bottom: 1px solid #eee;
     padding-bottom: 1em;
     float: left;
     margin-right: 0.4em;
-    
+
 }
 
 .item-container.pre-data .tile {
-    display: none;    
+    display: none;
 }
 
-.location-icon {
-    background-image: url(images/marker.png);
+.location-icon, .parent-icon {
     width: 24px;
     height: 24px;
     display: block;
@@ -487,6 +490,14 @@ div.sharedaddy h3.sd-title:before {
     background-repeat: no-repeat;
     float: left;
     margin-right: 6px;
+}
+
+.location-icon {
+    background-image: url(images/country.png);
+}
+
+.parent-icon {
+    background-image: url(images/multi-marker.png);
 }
 
 .pre-data-message {
@@ -508,7 +519,7 @@ div.sharedaddy h3.sd-title:before {
     width: 50%;
     text-align: center;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
     padding: 1em;
     cursor: pointer;
     background-color: #dc2ca4;
@@ -528,15 +539,15 @@ div.sharedaddy h3.sd-title:before {
     background-color: #ececec;
     color: #333;
 }
-    
-.load-more-btn.loading {    
+
+.load-more-btn.loading {
     background-image: url('images/ajax-loader.png');
     background-size: 30%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.load-more-btn.finished .finished { 
+.load-more-btn.finished .finished {
     display: block;
 }
 
@@ -569,112 +580,112 @@ div.sharedaddy h3.sd-title:before {
         background-color: #ececec;
         color: #333;
     }
-    
+
     .load-more-btn:not(.finished):hover {
         background-color: #dc2ca4;
         color: aliceblue;
     }
-    
+
     .entry-header.center {
         text-align: center;
     }
-    
+
     #travel-journals-on-travel-page {
         display: block;
     }
-    
+
     .entry-footer .cat-tags-links {
         width: 100%;
-        float: left;        
-    }    
-    
+        float: left;
+    }
+
     .site-content {
         padding: 0;
     }
-    
+
     .has-sidebar:not(.error404) #primary {
         float: left;
         width: 64%;
     }
-    
+
     .has-sidebar #secondary {
         width: 30%;
     }
-    
+
     .widget-column {
         width: 25% !important;
         float: left;
         padding-right: 3em;
     }
-    
+
     .childs.break-out {
         margin-left: -27%;
         width: 169%;
     }
-    
+
     .childs.break-out .childs-title {
         border-top: 1px solid #EEE;
         padding-top: 1em;
         border-bottom: 1px solid #eee;
         padding-bottom: 1em;
     }
-    
+
     .item-container .tile {
-        width: calc(33.33% - 20px);    
+        width: calc(33.33% - 20px);
         margin-bottom: 1em;
         border-bottom: 1px solid #eee;
         padding-bottom: 1em;
         float: left;
         margin-right: 0.4em;
     }
-    
+
     .item-container .entry-title a:link, .item-container .entry-title a:visited {
         color:#333;
     }
-    
+
     body:not(.twentyseventeen-front-page) .item-container .entry-header {
         padding:0;
     }
-    
+
     .item-container .entry-header {
         margin-bottom: 0 !important;
     }
-    
+
     .item-container .entry-content p {
         margin: 0;
-    }   
-    
+    }
+
     .item-container .cat-links {
         display: none;
     }
-    
+
     .item-container .post-thumbnail {
         margin-bottom: 0.4em;
     }
-    
 
-    
+
+
     .archive .site-main > article, .search .site-main > article {
         padding-bottom: 0;
     }
-    
+
     .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
         opacity: 0.3;
     }
-    
+
 	/* Layout */
 	.wrap, .page-one-column .panel-content .wrap, .navigation-top .wrap  {
 		max-width: 1280px;
     }
-    
+
     .wrap.space-top {
-        padding-top: 4em;       
+        padding-top: 4em;
     }
-    
+
     .wrap.space-bottom {
         padding-bottom: 2em;
     }
-    
+
     .page-three-columns .content-area {
         padding-top: 1em;
     }
@@ -705,21 +716,21 @@ div.sharedaddy h3.sd-title:before {
         width: 76%;
         min-height: 12em;
     }
-    
+
     .page-three-columns .fixed-sharing {
         position: fixed;
         width: 15% !important;
         top:3em;
         max-width: 200px;
     }
-    
+
     .page-three-columns .absolute-bottom-sharing {
         position: absolute;
         bottom: 0;
     }
-    
+
     /** childs **/
-    
+
      .childs-overview .child {
     }
      .childs-overview .child:first-child, .childs-overview .child.push {
@@ -734,8 +745,8 @@ div.sharedaddy h3.sd-title:before {
      .childs-overview .child h1 {
          font-weight: 200;
          font-size: 1.6em;
-    }    
-    
+    }
+
      .childs-overview .child:first-child .text, .childs-overview .child.push .text {
          width: 45%;
     }
@@ -747,13 +758,13 @@ div.sharedaddy h3.sd-title:before {
      .childs-overview .child:first-child p, .childs-overview .child.push p{
          font-size: 0.8em;
     }
-    
+
     /** end childs **/
 }
 
 @media screen and (min-width: 60em) {
      /** childs **/
-    
+
      .childs-overview .child {
     }
      .childs-overview .child:first-child, .childs-overview .child.push {
@@ -768,8 +779,8 @@ div.sharedaddy h3.sd-title:before {
      .childs-overview .child h1 {
          font-weight: 200;
          font-size: 1.6em;
-    }    
-    
+    }
+
      .childs-overview .child:first-child .text, .childs-overview .child.push .text {
          width: 40%;
     }
@@ -781,7 +792,7 @@ div.sharedaddy h3.sd-title:before {
      .childs-overview .child:first-child p, .childs-overview .child.push p{
          font-size: 0.8em;
     }
-    
+
     /** end childs **/
 }
 
@@ -790,19 +801,19 @@ div.sharedaddy h3.sd-title:before {
     .navigator .prev, .navigator .next {
         display: table-cell;
     }
-    
+
     .navigator .prev, .navigator .next {
         display: table-cell;
     }
-    
+
     .navigator .next-info  {
         padding-right: 30px;
     }
-    
+
     .navigator .prev-info {
         padding-left: 30px;
     }
-    
+
     .home-row .featured.travel {
         width: 66%;
     }
@@ -830,12 +841,12 @@ div.sharedaddy h3.sd-title:before {
         padding-left: 2%;
         padding-right: 2%;
     }
-    
+
     .featured-item .description h1 {
         margin-top: inherit;
         margin-bottom: 0.75em;
     }
-    
+
     .sharing {
         float: left;
         width: 100%;
@@ -847,13 +858,13 @@ div.sharedaddy h3.sd-title:before {
         float: left;
         width: 50%;
     }
-    
+
     body:not(.page-three-columns) .sharedaddy {
         width: 50%;
         margin-top: 0;
     }
-    
+
     div.sharedaddy h3.sd-title {
         width: 100%;
-    }    
+    }
 }

@@ -17,28 +17,28 @@ add_action( 'wp_enqueue_scripts', 'thdk_enqueue_styles' );
 /**
  * Proper way to enqueue scripts and styles.
  */
-function thdk_scripts() {    
+function thdk_scripts() {
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
     wp_enqueue_script( 'jquery' );
-    
+
     $version = "1.0";
     if( current_user_can('editor') || current_user_can('administrator') ) {
        // $version = (string)strtotime("now");
     }
-    
+
     wp_enqueue_script( 'script-name', get_stylesheet_directory_uri() . '/js/script.js', array('jquery' ,'jquery-masonry'), $version, true );
-    
+
     global $wp_query;
-    
+
 	$args = array(
 		'nonce' => wp_create_nonce( 'be-load-more-nonce' ),
 		'url'   => admin_url( 'admin-ajax.php' ),
 		'query' => $wp_query->query,
 	);
     wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAqd9kHy-ysstyv1vFc1YXphN9wGAHKuQw&callback=initMap#asyncload', array( 'script-name' ));
-    wp_enqueue_script('google-jsapi','https://www.google.com/jsapi'); 
-			
+    wp_enqueue_script('google-jsapi','https://www.google.com/jsapi');
+
 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
 	wp_localize_script( 'be-load-more', 'beloadmore', $args );
 }
@@ -53,14 +53,14 @@ function ikreativ_async_scripts($url)
     else if ( is_admin() )
         return str_replace( '#asyncload', '', $url );
     else
-	return str_replace( '#asyncload', '', $url )."' async='async"; 
+	return str_replace( '#asyncload', '', $url )."' async='async";
     }
 add_filter( 'clean_url', 'ikreativ_async_scripts', 11, 1 );
 
 
 // custom post types
 function thdk_custom_post_types() {
-    
+
     // country
   $labels = array(
     'name'               => _x( 'Countries', 'post type general name' ),
@@ -73,7 +73,7 @@ function thdk_custom_post_types() {
     'view_item'          => __( 'View Country' ),
     'search_items'       => __( 'Search Countries' ),
     'not_found'          => __( 'No countries found' ),
-    'not_found_in_trash' => __( 'No countries found in the Trash' ), 
+    'not_found_in_trash' => __( 'No countries found in the Trash' ),
     'parent_item_colon'  => '',
     'menu_name'          => 'Countries'
   );
@@ -86,9 +86,9 @@ function thdk_custom_post_types() {
     'rewrite' => array( 'slug' => 'travel/countries'),
     'has_archive' => true
   );
-    
-    register_post_type( 'country', $args ); 
-    
+
+    register_post_type( 'country', $args );
+
     // city
     $labels2 = array(
     'name'               => _x( 'Cities', 'post type general name' ),
@@ -101,7 +101,7 @@ function thdk_custom_post_types() {
     'view_item'          => __( 'View city' ),
     'search_items'       => __( 'Search cities' ),
     'not_found'          => __( 'No cities found' ),
-    'not_found_in_trash' => __( 'No cities found in the Trash' ), 
+    'not_found_in_trash' => __( 'No cities found in the Trash' ),
     'parent_item_colon'  => '',
     'menu_name'          => 'Cities'
   );
@@ -114,11 +114,11 @@ function thdk_custom_post_types() {
     'rewrite' => array( 'slug' => 'travel/cities'),
     'has_archive'   => true,
   );
-    register_post_type( 'city', $args2 ); 
-    
+    register_post_type( 'city', $args2 );
+
     // journal
-    
-  
+
+
     $labels3 = array(
     'name'               => _x( 'Journals', 'post type general name' ),
     'singular_name'      => _x( 'Journal', 'post type singular name' ),
@@ -130,7 +130,7 @@ function thdk_custom_post_types() {
     'view_item'          => __( 'View Journal' ),
     'search_items'       => __( 'Search Journals' ),
     'not_found'          => __( 'No journals found' ),
-    'not_found_in_trash' => __( 'No journals found in the Trash' ), 
+    'not_found_in_trash' => __( 'No journals found in the Trash' ),
     'parent_item_colon'  => '',
     'menu_name'          => 'Journals'
   );
@@ -144,11 +144,11 @@ function thdk_custom_post_types() {
     'hierarchical' => true,
     'has_archive' => true
   );
-  register_post_type( 'journal', $args3 ); 
-    
+  register_post_type( 'journal', $args3 );
+
      // hike
-    
-  
+
+
     $labels4 = array(
     'name'               => _x( 'Hikes', 'post type general name' ),
     'singular_name'      => _x( 'Hike', 'post type singular name' ),
@@ -160,7 +160,7 @@ function thdk_custom_post_types() {
     'view_item'          => __( 'View hike' ),
     'search_items'       => __( 'Search hikes' ),
     'not_found'          => __( 'No hikes found' ),
-    'not_found_in_trash' => __( 'No hikes found in the Trash' ), 
+    'not_found_in_trash' => __( 'No hikes found in the Trash' ),
     'parent_item_colon'  => '',
     'menu_name'          => 'Hikes'
   );
@@ -174,7 +174,7 @@ function thdk_custom_post_types() {
     'hierarchical' => true,
     'has_archive' => true
   );
-  register_post_type( 'hike', $args4 ); 
+  register_post_type( 'hike', $args4 );
 }
  add_action( 'init', 'thdk_custom_post_types' );
 
@@ -197,7 +197,7 @@ function thdk_create_categories() {
     'slug' => 'photography'
   ));
   }
-  
+
   $term = 'Featured Photo';
   if(!term_exists($term, $taxonomy)){
      wp_insert_term($term, $taxonomy, array(
@@ -205,7 +205,7 @@ function thdk_create_categories() {
     'parent'=> $photoid
   ));
   }
-  
+
   $term = 'Featured Travel';
   if(!term_exists($term, $taxonomy)){
      wp_insert_term($term, $taxonomy, array(
@@ -229,11 +229,11 @@ function thdk_filter_body_class( $wp_classes, $extra_classes )
     if (thdk_featured_image_in_header() | is_home()) {
         array_push($extra_classes, "twentyseventeen-front-page", "featured-image-in-header", "has-header-image");
     }
-    
+
     $supportedPostTypes = ["city", "journal", "hike"];
     $posttype = get_post_type();
     $useThreeColumnTemplate =  !is_archive() && in_array ($posttype, $supportedPostTypes);
-    
+
     // define page layout
     if ($useThreeColumnTemplate || get_page_template_slug() == "page-templates/three-columns.php" ) {
         $blacklist = array( 'page-one-column', 'has-sidebar' );
@@ -244,45 +244,45 @@ function thdk_filter_body_class( $wp_classes, $extra_classes )
         $wp_classes = array_diff( $wp_classes, $blacklist );
         array_push($extra_classes, "page-two-columns", "has-sidebar");
     }
-    
-    
+
+
 
     // Filter the body classes
     if (is_archive()) {
         $blacklist = array( 'has-sidebar' );
         $wp_classes = array_diff( $wp_classes, $blacklist );
     }
-    
+
     return array_merge( $wp_classes, (array) $extra_classes );
 }
 add_filter( 'body_class', 'thdk_filter_body_class', 11, 2 );
 
 
-// thdk: show fullsize featured image in header for some pages 
+// thdk: show fullsize featured image in header for some pages
 
 function thdk_featured_image_in_header() {
     if (!has_post_thumbnail())
         return false;
-    
-    
+
+
     if (is_archive())
         return false;
-    
+
     $supportedPostTypes = ["city", "journal", "hike", "country"];
     $posttype = get_post_type();
     if (in_array ($posttype, $supportedPostTypes))
         return true;
-    
+
     return false;
 }
 
 // thdk: don't show children on overview
 
-function hide_children( $query ) 
+function hide_children( $query )
 {
     remove_action( 'pre_get_posts', current_filter() );
 
-    if ( is_admin() or ! $query->is_main_query() ) 
+    if ( is_admin() or ! $query->is_main_query() )
         return;
 
     if (!is_post_type_archive())
@@ -294,7 +294,7 @@ function hide_children( $query )
 
 add_action( 'pre_get_posts','hide_children' );
 
-// thdk: only show featured image on top for some pages / posts 
+// thdk: only show featured image on top for some pages / posts
 function thdk_show_featured_image_on_top() {
     return false;
 }
@@ -304,7 +304,7 @@ function thdk_show_featured_image_on_top() {
 function thdk_hide_breadcrumbs() {
     if (is_front_page())
         return true;
-    
+
     return false;
 }
 
@@ -319,7 +319,7 @@ function thdk_override_yoast_breadcrumb_trail( $links ) {
     if (!is_home()) {
         $value = $parts[3];
     }
-    
+
     if (count($parts) > 5) {
         if (is_archive() && get_post_type() == "post") {
              $breadcrumb[] = array(
@@ -367,7 +367,7 @@ function thdk_get_posttype_childs() {
            'order_by' => 'menu_order',
             'post_parent' => $post->ID,
           'order' => 'ASC');
-         
+
          $childs = new WP_Query($args);
     return $childs;
 }
@@ -383,7 +383,7 @@ function thdk_posttype_childs($title, $style = "") {
            'order_by' => 'menu_order',
             'post_parent' => $post->ID,
           'order' => 'ASC');
-         
+
          $myposts = new WP_Query($args);
         if ( $myposts->have_posts() ) {
             echo '<div class="childs '.get_post_type().' '.$style.'">';
@@ -392,7 +392,7 @@ function thdk_posttype_childs($title, $style = "") {
                echo get_template_part( 'template-parts/post/tile', get_post_format() );
             endwhile;
             echo '</div><div class="pre-data-message">Please hold, images are still loading <span></span></div></div>';
-            
+
             wp_reset_postdata();
         }
 }
@@ -403,20 +403,20 @@ function thdk_posttype_childs($title, $style = "") {
 function thdk_use_different_template_for_parent_and_child($single_template)
 {
 	$object = get_queried_object();
-    
+
     $key_1_value = get_post_meta( $object->ID, 'child-has-childs', true );
     // Check if the custom field has a value.
     if ( ! empty( $key_1_value ) ) {
         if ($key_1_value == "yes"){
             return $single_template;
         }
-    }   
-    
-    
+    }
+
+
     if ($object->post_parent) {
         $childTemplateFilename .= locate_template("single-{$object->post_type}-child.php");
     }
-    
+
 	if( file_exists( $childTemplateFilename ) )
 	{
 		return $childTemplateFilename;
@@ -434,9 +434,9 @@ add_filter( 'single_template', 'thdk_use_different_template_for_parent_and_child
 function be_ajax_load_more() {
     check_ajax_referer( 'be-load-more-nonce', 'nonce' );
 
-    $args = isset( $_POST['query'] ) ? array_map( 'esc_attr', $_POST['query'] ) : array();   
+    $args = isset( $_POST['query'] ) ? array_map( 'esc_attr', $_POST['query'] ) : array();
     ob_start();
-    
+
     $term;
     $tax;
     $paged;
@@ -455,9 +455,9 @@ function be_ajax_load_more() {
         else if ($key == "category_name") {
             $categories = $value;
         }
-    }    
-    
-    
+    }
+
+
     if ($term && $tax) {
         $args = array('post_type' => 'post', 'paged' => $paged, 'posts_per_page' => 10, 'tax_query' => array (
           array (
@@ -469,9 +469,9 @@ function be_ajax_load_more() {
         ));
     }
     else {
-        $args = array('post_type' => $arrayPostTypes, 'paged' => $paged, 'posts_per_page' => 11, 'category_name' => $categories);        
+        $args = array('post_type' => $arrayPostTypes, 'paged' => $paged, 'posts_per_page' => 11, 'category_name' => $categories);
     }
-   
+
     //echo print_r($args);
     $loop = new WP_Query( $args );
     if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
@@ -479,7 +479,7 @@ function be_ajax_load_more() {
            echo get_template_part( 'template-parts/post/tile');
         }
         else{
-           echo get_template_part( 'template-parts/post/cattile');         
+           echo get_template_part( 'template-parts/post/cattile');
         }
     endwhile; endif; wp_reset_postdata();
     $data = ob_get_clean();
@@ -522,13 +522,13 @@ function thdk_attachment_image_attributes( $attr, $attachment, $size ) {
 //	}
 
 	//return $attr;
-    
+
     if ( $size === 'thdk-small') {
         $attr['sizes'] = '(max-width: 1280px) 381px, 381px';
     } elseif ( $size === 'thdk-medium') {
-        $attr['sizes'] = '(max-width: 1280px) 511px, 511px';    
+        $attr['sizes'] = '(max-width: 1280px) 511px, 511px';
     } elseif ( $size === 'thdk-medium-2') {
-        $attr['sizes'] = '(max-width: 1280px) 600px, 600px';    
+        $attr['sizes'] = '(max-width: 1280px) 600px, 600px';
     } elseif ( $size === 'thdk-tile') {
         if (is_front_page()) {
             $attr['sizes'] = '(max-width: 1280px) 381px, 381px';
@@ -549,7 +549,7 @@ function jptweak_remove_share() {
         remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
     }
 }
- 
+
 add_action( 'loop_start', 'jptweak_remove_share' );
 
 // thdk: display jetpack sharing icons
@@ -573,31 +573,32 @@ function thdk_jetpack_sharing_icons() {
 function twentyseventeen_entry_footer($showSocialIcons = true) {
 
 	/* translators: used between list items, there is a space after the comma */
-	$separate_meta = __( ', ', 'twentyseventeen' );
+    $separate_meta = __( ', ', 'twentyseventeen' );
 
 	// Get Categories for posts.
 	$categories_list = get_the_category_list( $separate_meta );
 
 	// Get Tags for posts.
 	$tags_list = get_the_tag_list( '', $separate_meta );
-    
+
     $country_list = wp_get_post_terms(get_the_ID(), 'country', array("fields" => "all"));
-    
+
     $city_list = wp_get_post_terms(get_the_ID(), 'city', array("fields" => "all"));
 
 	// We don't want to output .entry-footer if it will be empty, so make sure its not.
-	if ( ( ( twentyseventeen_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() || $showSocialIcons || count($country_list) > 0 || count($city_list) > 0) {
+	if ( ( ( twentyseventeen_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() || $showSocialIcons || count($country_list) > 0 || count($city_list) > 0 || isset($parent_post_title)) {
         echo '<div id="scroller-anchor"></div>';
 		echo '<footer class="entry-footer" id="scroller">';
 
 			// if ( 'post' === get_post_type() ) {
-				if ( ( $categories_list && twentyseventeen_categorized_blog() ) || $tags_list || count($country_list) > 0 || count($city_list) > 0 ) {
+				if ( ( $categories_list && twentyseventeen_categorized_blog() ) || $tags_list || count($country_list) > 0 || count($city_list) > 0 || true ) {
 					echo '<span class="cat-tags-links">';
 
 						// Make sure there's more than one category before displaying.
 						if ( $categories_list && twentyseventeen_categorized_blog() ) {
 							echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>';
-						}
+                        }
+                        echo thdk_show_parent();
                         echo thdk_show_location();
 
 						if ( $tags_list ) {
@@ -609,10 +610,10 @@ function twentyseventeen_entry_footer($showSocialIcons = true) {
 			// }
 
 			twentyseventeen_edit_link();
-        
+
             //thdk: include sharing icons
        if ($showSocialIcons) {
-        thdk_sharing();   
+        thdk_sharing();
        }
 		echo '</footer> <!-- .entry-footer -->';
 	}
@@ -623,7 +624,7 @@ function thdk_show_location($addLink = true) {
     $postid = get_the_ID();
     $term_list = wp_get_post_terms($postid, 'country', array("fields" => "all"));
     if($addLink && $term_list[0]->name) {
-           $country = '<a href="' . thdk_get_permalink_by_slug($term_list[0]->name, $term_list[0]->taxonomy) . '">' . $term_list[0]->name . '</a>';        
+           $country = '<a href="' . thdk_get_permalink_by_slug($term_list[0]->name, $term_list[0]->taxonomy) . '">' . $term_list[0]->name . '</a>';
         }
         else {
             $country = $term_list[0]->name;
@@ -631,14 +632,14 @@ function thdk_show_location($addLink = true) {
 
     $term_list = wp_get_post_terms($postid, 'city', array("fields" => "all"));
     $city = $term_list[0]->name;
-    
+
     if($addLink && $term_list[0]->name) {
-           $city = '<a href="' . thdk_get_permalink_by_slug($term_list[0]->name, $term_list[0]->taxonomy) . '">' . $term_list[0]->name . '</a>';        
+           $city = '<a href="' . thdk_get_permalink_by_slug($term_list[0]->name, $term_list[0]->taxonomy) . '">' . $term_list[0]->name . '</a>';
         }
         else {
             $city = $term_list[0]->name;
         }
-    
+
     if($country || $city) {
         echo '<span class="location-links">';
         echo '<span class="location-icon"></span>';
@@ -658,11 +659,29 @@ function thdk_show_location($addLink = true) {
     }
 }
 
+function thdk_show_parent($addLink = true) {
+    $postid = get_the_ID();
+    $parentPostId = wp_get_post_parent_id($postid);
+
+    if ($parentPostId) {
+        if($addLink) {
+            $parent = '<a href="' . get_post_permalink($parentPostId) . '">' . get_the_title($parentPostId) . '</a>';
+        }
+        else {
+            $parent = get_the_title($parentPostId);
+        }
+
+        echo '<span class="parent-links" style="display=none">';
+        echo '<span class="parent-icon"></span>';
+        echo $parent;
+        echo '</span>';
+ }
+}
 
 function thdk_sharing() {
-    
+
     echo '<div class="sharing">';
-    thdk_jetpack_sharing_icons();        
+    thdk_jetpack_sharing_icons();
     echo '<div class="likedaddy"><h3 class="like-title">Or just secretly like this</h3>';
     echo '<div class="fb-like"  data-layout="button_count"  data-show-faces="false" data-share="false"></div></div>';
     echo '<div class="clear"></div>';
@@ -684,7 +703,7 @@ function thdk_get_related_posts( $taxonomy = '', $args = [] )
      * Check if we have a valid taxonomy and also if the taxonomy exists to avoid bugs further down.
      * Return false if taxonomy is invalid or does not exist
      */
-    if ( !$taxonomy ) 
+    if ( !$taxonomy )
         return false;
 
     $taxonomy = filter_var( $taxonomy, FILTER_SANITIZE_STRING );
@@ -692,7 +711,7 @@ function thdk_get_related_posts( $taxonomy = '', $args = [] )
         return false;
 
     /*
-     * We have made it to here, so we should start getting our stuff togther. 
+     * We have made it to here, so we should start getting our stuff togther.
      * Get the current post object to start of
      */
     $current_post = get_queried_object();
