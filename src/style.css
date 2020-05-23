@@ -1,0 +1,859 @@
+/*
+ Theme Name:   Framed Sunset
+ Theme URI:    http://thdk.be/
+ Description:  Twenty Seventeen Child Theme
+ Author:       Thomas Dekiere
+ Author URI:   http://thdk.be
+ Template:     twentyseventeen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  thdk-framed-sunset
+*/
+
+body.featured-image-in-header:not(.title-tagline-hidden) .site-branding-text {   
+/*
+    padding: 1em;
+    border: solid 2px #ababab;
+    background-color: rgb(101, 101, 101);
+    background-color: rgba(101, 101, 101, 0.6);
+    */
+
+}
+
+body:not(.featured-image-in-header) .custom-header-media:before, .panel-image:before {
+    background: none;
+}
+
+.site-branding-text .site-title {
+    font-weight: 600;
+}
+
+.has-header-image .site-branding {
+    display:none !important;
+}
+
+.site-branding-text .site-description span {
+    color: #dc2ca4;
+}
+
+.site-branding {
+    padding: 2em 0;
+}
+
+.custom-logo-link img {
+    max-height: 100px;
+}
+
+.breadcrumbs {
+    padding-bottom: 2em;
+    font-size: 0.8em;
+    padding-top: 2em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2em;
+}
+
+.breadcrumbs a:link, .breadcrumbs a:visited, .site-content a:link, .site-content a:visited {
+    color: #dc2ca4;
+}
+
+.site-content a:link > h1, .site-content a:visited > h1, .tagcloud a:link, .tagcloud a:visited {
+    color: #222;
+}
+
+.archive.page-one-column:not(.has-sidebar) .page-header, .archive.page-one-column:not(.has-sidebar) #primary, .breadcrumbs {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body:not(.twentyseventeen-front-page):not(.home) .site-title a, body:not(.twentyseventeen-front-page):not(.home) .site-description {
+     color: #353535;
+}
+
+.wrap.full-width {
+    max-width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 1em;
+}
+
+.wrap.full-width.no-border {
+    border-top: none;
+}
+
+.wrap.border-bottom {
+    border-bottom: 1px solid #eee;
+}
+
+.wrap.space-top {
+        padding-top: 1em;       
+ }
+
+.clear {
+    clear: both;
+}
+
+.entry-footer {
+    border-bottom: 0;
+    margin-top: 0;
+    padding-bottom:0;
+}
+
+.edit-link {
+     display: none !important;
+}
+
+
+
+/* travel journals on travel page */
+
+#travel-journals-on-travel-page {
+    display: none;
+}
+
+.childs-overview-gallery {
+     padding-bottom: 4%;
+}
+ .childs-overview-gallery .text {
+     position: relative;
+     bottom: 130px;
+     background-color: hsla(0, 0%, 97%, 0.7);
+     padding: 1%;
+     padding-top: 20px;
+     padding-bottom: 20px;
+}
+ .childs-overview.desktop {
+     padding-bottom: 2%;
+}
+ .childs-overview .child {
+     float: left;
+     width: 31%;
+     margin-left: 2%;
+}
+ .childs-overview .child:first-child, .childs-overview .child.push {
+     width: 100%;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-align-items: center;
+     -ms-flex-align: center;
+     align-items: center;
+     margin: 2%;
+     margin-left: 0;
+     margin-right:0;
+     margin-bottom: 33px;
+     margin-top: 0%;
+     padding-left: 2%;
+}
+ .childs-overview .child:first-child .img, .childs-overview .child.push .img {
+     -webkit-order: 2;
+     -ms-flex-order: 2;
+     order: 2;
+     width: 44%;
+     margin-left: 2%;
+}
+ .childs-overview .child h1 {
+     font-size: 1em;
+     margin-top: 0.2em;
+     margin-bottom: 0.2em;
+     font-weight: 600;
+}
+
+.childs-overview .child p {
+     font-size: 0.8em;
+}
+ .childs-overview .child:first-child .text, .childs-overview .child.push .text {
+     width: 53%;
+     font-size: 1.2em;
+}
+ .childs-overview .child:first-child h1, .childs-overview .child.push h1{
+     font-size: 0.8em;
+     font-weight: 600;
+}
+
+ .childs-overview .child:first-child p, .childs-overview .child.push p{
+     font-size: 0.6em;
+}
+
+.fb-like {
+    width: 100%;
+    float: left;
+    margin-bottom: 1em;
+}
+
+h3.like-title {
+    margin: 0 0 1em 0;
+    display: inline-block;
+    line-height: 1.2;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.edit-link {
+    float: left;
+    width: 100%;
+}
+
+.sharing {
+    float: left;
+    width: 100%;
+    padding-top:2em;
+}
+
+/* navigator */
+
+ .navigator {
+     padding: 0 0 17px 0;
+     margin: 0 0 32px 0;
+     border-bottom: 1px solid;
+     border-top: 1px solid;
+     border-color: #e3dedd;
+     padding-top: 1.5%;
+     float: left;
+}
+ .navigator .navigation-inner {
+     position: relative;
+     display: block 
+}
+ .navigator .prev-holder, .navigator .next-holder {
+     position: relative;
+     display: table;
+     table-layout: fixed;
+     height: 100%;
+     width: 100%;
+     width: 50% 
+}
+ .navigator .prev-holder {
+     float: left 
+}
+ .navigator .next-holder {
+     float: right 
+}
+ .navigator .prev, .navigator .next {
+     position: relative;
+     display: none;
+     height: 100%;
+     width: 100%;
+     vertical-align: middle;
+     text-align: center;
+     height: 80px;
+     width: 123px;
+     position: relative;
+     -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+     border-radius: 50% 
+}
+
+.navigator .prev a, .navigator .prev a img, .navigator .next a, .navigator .next a img {
+     display: inline-block;
+     vertical-align: top;
+     width: 100%;
+     height: auto;
+}
+ .navigator .prev-info, .navigator .next-info {
+     position: relative;
+     display: table-cell;
+     height: 100%;
+     width: 100%;
+     vertical-align: middle;
+     text-align: center;
+     box-sizing: border-box 
+}
+ .navigator .prev-info {
+     text-align: left 
+}
+ .navigator .next-info {
+     text-align: right 
+}
+ .navigator .navigation-info-holder {
+     line-height: normal;
+     position: relative 
+}
+ .navigator .navigation-info {
+     font-size: 12px;
+     line-height: 1em;
+     color: #000;
+     text-transform: uppercase;
+     letter-spacing: 1px 
+}
+
+ .navigator .navigation-icon {
+     font-size: 16px;
+     color: #000;
+    position: absolute;
+    top: 7px 
+}
+ .next .navigation-icon {
+     right: -50px 
+}
+ .prev .navigation-icon {
+     left: -50px 
+}
+ .navigator a.av-title {
+     display: block;
+     font-size: 13px;
+     line-height: normal;
+     color: #797979;
+     font-family: "Noto Serif", serif;
+     margin-top: 1px 
+}
+
+span.arrow_carrot-right.navigation-icon {
+    right: -23px;
+}
+
+span.arrow_carrot-left.navigation-icon {
+    left: -23px;
+}
+
+ .arrow_carrot-left:before {
+     content: "\34";
+}
+ .arrow_carrot-right:before {
+     content: "\35";
+}
+
+/* end navigator */
+
+ .home-row .featured.travel {
+     width: 66%;
+     border-left: solid 1em #F7F7F7;
+}
+ .home-row .featured.photo {
+     margin-right: 1%;
+}
+ .featured-item {
+    width: 90%;
+    margin: 0.8em;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.weekly .featured-item .photo {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+.weekly .featured-item .description {
+    width: 60%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-left: 0;
+}
+
+.weekly .featured-item .description .wp-caption {
+    text-align: center;
+}
+
+ .featured-item .photo {
+     float: left;
+     width: 100%;
+}
+ .featured-item .description {
+    float: left;
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.featured-item .description h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.wrap.full-width .entry-header {
+   /** margin-bottom: 4em; **/
+}
+
+.wrap.full-width .item-container .entry-header {
+    margin-bottom: 0;
+}
+
+.entry-header.center {
+    text-align: left;
+}
+
+.entry-footer .cat-tags-links {
+    float: left;
+}
+
+.entry-footer .cat-links, .entry-footer .location-links {
+    display: block;
+    font-size: 11px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.1818em;
+    padding-left: 2.5em;
+    position: relative;
+    text-transform: uppercase;
+    float: left;
+}
+
+.entry-footer .cat-links {
+    margin-right: 2.5em;
+}
+
+.entry-footer .location-links { 
+    padding-left: 0;
+}
+
+.entry-footer .location-links .location-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    margin-right: 1.2em;
+    margin-left: -0.2em;
+}
+
+.item-container .entry-footer {
+        border: none;
+        margin: 0;
+        padding: 0;
+}
+
+.entry-footer .tags-links {
+    float: left;
+    clear: both;
+}
+
+.entry-content .map {
+    margin-bottom: 2em;
+}
+
+.sharedaddy {
+    float: left;
+    width: 100%;
+}
+
+div.sharedaddy h3.sd-title:before {
+        border: none !important;
+        border-top: none !important;
+        margin-top: 0;
+        display: none !important;
+    }
+
+.nutshell {
+}
+
+.page .panel-content .entry-title, .page-title, body.page:not(.twentyseventeen-front-page) .entry-title {
+    color: #222;
+    font-size: 1.6em;
+    font-weight: 300;
+    text-transform:none;
+    letter-spacing: normal;
+}
+
+.site-main {
+    position: relative;
+}
+
+.single-post .site-main .post-thumbnail a:hover img, .post-thumbnail a:focus img {
+    opacity: 1;
+}
+
+.gallery-item a:hover img,
+.gallery-item a:focus img {
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+}
+
+.item-container .tile {
+    display: inherit;    
+    margin-bottom: 1em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1em;
+    float: left;
+    margin-right: 0.4em;
+    
+}
+
+.item-container.pre-data .tile {
+    display: none;    
+}
+
+.location-icon {
+    background-image: url(images/marker.png);
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-size: 98%;
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 6px;
+}
+
+.pre-data-message {
+    display: block;
+}
+
+.pre-data-message span {
+    background-image: url(images/ajax-loader.png);
+    background-size: 36%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 171px;
+    height: 1.2em;
+    background-position-y: -1em;
+}
+
+
+.load-more-btn {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;    
+    padding: 1em;
+    cursor: pointer;
+    background-color: #dc2ca4;
+    color: aliceblue;
+}
+
+.load-more-btn.finished {
+    cursor: default;
+}
+
+.load-more-btn:not(.finished):hover {
+    background-color: #ececec;
+    color:#333;
+}
+
+.load-more-btn.loading:hover {
+    background-color: #ececec;
+    color: #333;
+}
+    
+.load-more-btn.loading {    
+    background-image: url('images/ajax-loader.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.load-more-btn.finished .finished { 
+    display: block;
+}
+
+
+.load-more-btn.finished .text, .load-more-btn.finished .load-icon {
+    display: none;
+}
+
+.load-more-btn.loading span.text {
+    display: none;
+}
+
+.load-more-btn span.load-icon, .load-more-btn span.finished {
+        display: none;
+}
+
+.load-more-btn.loading span.load-icon {
+    display: block;
+
+}
+
+.genericon {
+    font-size: 23px !important;
+}
+
+
+@media screen and (min-width: 48em) {
+    .load-more-btn {
+        width: 50%;
+        background-color: #ececec;
+        color: #333;
+    }
+    
+    .load-more-btn:not(.finished):hover {
+        background-color: #dc2ca4;
+        color: aliceblue;
+    }
+    
+    .entry-header.center {
+        text-align: center;
+    }
+    
+    #travel-journals-on-travel-page {
+        display: block;
+    }
+    
+    .entry-footer .cat-tags-links {
+        width: 100%;
+        float: left;        
+    }    
+    
+    .site-content {
+        padding: 0;
+    }
+    
+    .has-sidebar:not(.error404) #primary {
+        float: left;
+        width: 64%;
+    }
+    
+    .has-sidebar #secondary {
+        width: 30%;
+    }
+    
+    .widget-column {
+        width: 25% !important;
+        float: left;
+        padding-right: 3em;
+    }
+    
+    .childs.break-out {
+        margin-left: -27%;
+        width: 169%;
+    }
+    
+    .childs.break-out .childs-title {
+        border-top: 1px solid #EEE;
+        padding-top: 1em;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1em;
+    }
+    
+    .item-container .tile {
+        width: calc(33.33% - 20px);    
+        margin-bottom: 1em;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1em;
+        float: left;
+        margin-right: 0.4em;
+    }
+    
+    .item-container .entry-title a:link, .item-container .entry-title a:visited {
+        color:#333;
+    }
+    
+    body:not(.twentyseventeen-front-page) .item-container .entry-header {
+        padding:0;
+    }
+    
+    .item-container .entry-header {
+        margin-bottom: 0 !important;
+    }
+    
+    .item-container .entry-content p {
+        margin: 0;
+    }   
+    
+    .item-container .cat-links {
+        display: none;
+    }
+    
+    .item-container .post-thumbnail {
+        margin-bottom: 0.4em;
+    }
+    
+
+    
+    .archive .site-main > article, .search .site-main > article {
+        padding-bottom: 0;
+    }
+    
+    .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+        opacity: 0.3;
+    }
+    
+	/* Layout */
+	.wrap, .page-one-column .panel-content .wrap, .navigation-top .wrap  {
+		max-width: 1280px;
+    }
+    
+    .wrap.space-top {
+        padding-top: 4em;       
+    }
+    
+    .wrap.space-bottom {
+        padding-bottom: 2em;
+    }
+    
+    .page-three-columns .content-area {
+        padding-top: 1em;
+    }
+
+    .page-three-columns main {
+        float: left;
+        width: 76%;
+    }
+
+    .page-three-columns aside.content {
+        float: right;
+        width: 20%;
+        margin-left: 4%;
+    }
+
+    .page-three-columns .site-main :not(.tile) > .entry-header {
+        float: left;
+        width: 22%;
+    }
+
+    .page-three-columns .site-main :not(.tile) > .entry-footer {
+        float: left;
+        width: 22%;
+    }
+
+    .page-three-columns .site-main :not(.tile) > .entry-content  {
+        float: right;
+        width: 76%;
+        min-height: 12em;
+    }
+    
+    .page-three-columns .fixed-sharing {
+        position: fixed;
+        width: 15% !important;
+        top:3em;
+        max-width: 200px;
+    }
+    
+    .page-three-columns .absolute-bottom-sharing {
+        position: absolute;
+        bottom: 0;
+    }
+    
+    /** childs **/
+    
+     .childs-overview .child {
+    }
+     .childs-overview .child:first-child, .childs-overview .child.push {
+         width: 90%;
+         margin: 2%;
+         margin-bottom: 33px;
+         margin-top: 0%;
+         padding-left: 6%;
+    }
+     .childs-overview .child:first-child .img, .childs-overview .child.push .img {
+    }
+     .childs-overview .child h1 {
+         font-weight: 200;
+         font-size: 1.6em;
+    }    
+    
+     .childs-overview .child:first-child .text, .childs-overview .child.push .text {
+         width: 45%;
+    }
+     .childs-overview .child:first-child h1, .childs-overview .child.push h1{
+         font-size: 1.8em;
+         font-weight: 200;
+    }
+
+     .childs-overview .child:first-child p, .childs-overview .child.push p{
+         font-size: 0.8em;
+    }
+    
+    /** end childs **/
+}
+
+@media screen and (min-width: 60em) {
+     /** childs **/
+    
+     .childs-overview .child {
+    }
+     .childs-overview .child:first-child, .childs-overview .child.push {
+         width: 80%;
+         margin: 2%;
+         margin-bottom: 33px;
+         margin-top: 0%;
+         padding-left: 10%;
+    }
+     .childs-overview .child:first-child .img, .childs-overview .child.push .img {
+    }
+     .childs-overview .child h1 {
+         font-weight: 200;
+         font-size: 1.6em;
+    }    
+    
+     .childs-overview .child:first-child .text, .childs-overview .child.push .text {
+         width: 40%;
+    }
+     .childs-overview .child:first-child h1, .childs-overview .child.push h1{
+         font-size: 1.8em;
+         font-weight: 200;
+    }
+
+     .childs-overview .child:first-child p, .childs-overview .child.push p{
+         font-size: 0.8em;
+    }
+    
+    /** end childs **/
+}
+
+
+@media screen and (min-width: 40em) {
+    .navigator .prev, .navigator .next {
+        display: table-cell;
+    }
+    
+    .navigator .prev, .navigator .next {
+        display: table-cell;
+    }
+    
+    .navigator .next-info  {
+        padding-right: 30px;
+    }
+    
+    .navigator .prev-info {
+        padding-left: 30px;
+    }
+    
+    .home-row .featured.travel {
+        width: 66%;
+    }
+     .home-row .featured.photo {
+         margin-right: 1%;
+    }
+     .featured-item {
+        width: 90%;
+        margin: 0.8em;
+    }
+
+    .weekly .featured-item .photo {
+        width: 60%;
+    }
+
+    .weekly .featured-item .description {
+        width: 60%;
+    }
+
+     .featured-item .photo {
+         width: 48%;
+    }
+     .featured-item .description {
+        width: 50%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    
+    .featured-item .description h1 {
+        margin-top: inherit;
+        margin-bottom: 0.75em;
+    }
+    
+    .sharing {
+        float: left;
+        width: 100%;
+        padding-top: 1em;
+        border-top: solid 1px #eee;
+        margin-top:1em;
+    }
+     body:not(.page-three-columns) .likedaddy {
+        float: left;
+        width: 50%;
+    }
+    
+    body:not(.page-three-columns) .sharedaddy {
+        width: 50%;
+        margin-top: 0;
+    }
+    
+    div.sharedaddy h3.sd-title {
+        width: 100%;
+    }    
+}
