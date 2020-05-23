@@ -36,8 +36,6 @@ function thdk_scripts() {
 		'url'   => admin_url( 'admin-ajax.php' ),
 		'query' => $wp_query->query,
 	);
-    wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAqd9kHy-ysstyv1vFc1YXphN9wGAHKuQw&callback=initMap#asyncload', array( 'script-name' ));
-    wp_enqueue_script('google-jsapi','https://www.google.com/jsapi');
 
 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
 	wp_localize_script( 'be-load-more', 'beloadmore', $args );
