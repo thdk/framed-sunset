@@ -104,6 +104,9 @@ body:not(.twentyseventeen-front-page):not(.home) .site-title a, body:not(.twenty
      display: none !important;
 }
 
+#comments {
+    padding: 0;
+}
 
 
 /* travel journals on travel page */
