@@ -690,11 +690,8 @@ function thdk_show_parent($addLink = true) {
 }
 
 function thdk_sharing() {
-
     echo '<div class="sharing">';
     thdk_jetpack_sharing_icons();
-    echo '<div class="likedaddy"><h3 class="like-title">Or just secretly like this</h3>';
-    echo '<div class="fb-like"  data-layout="button_count"  data-show-faces="false" data-share="false"></div></div>';
     echo '<div class="clear"></div>';
     echo '</div>';
 }

@@ -196,9 +196,7 @@ h3.like-title {
 }
 
 .sharing {
-    float: left;
-    width: 100%;
-    padding-top:2em;
+    display: none;
 }
 
 /* navigator */
@@ -848,6 +846,7 @@ div.sharedaddy h3.sd-title:before {
     }
 
     .sharing {
+        display: block;
         float: left;
         width: 100%;
         padding-top: 1em;
