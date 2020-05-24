@@ -320,7 +320,7 @@ function thdk_hide_breadcrumbs() {
 }
 
 // thdk: add photography or travel to breadcrumb
-add_filter( 'wpseo_breadcrumb_links', 'thdk_override_yoast_breadcrumb_trail' );
+// add_filter( 'wpseo_breadcrumb_links', 'thdk_override_yoast_breadcrumb_trail' );
 
 function thdk_override_yoast_breadcrumb_trail( $links ) {
     global $post;
