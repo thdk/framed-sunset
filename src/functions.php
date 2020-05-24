@@ -42,6 +42,21 @@ function thdk_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'thdk_scripts' );
 
+/**
+ * Add a sidebar.
+ */
+function thdk_sidebars_init() {
+    register_sidebar( array(
+        'name'          => __( 'Desktop sidebar', 'thdk' ),
+        'id'            => 'sidebar-desktop',
+        'description'   => __( 'Widgets in this area will be shown on hikes, cities, ... but not on posts', 'thdk' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'thdk_sidebars_init' );
 
 // Async load
 function ikreativ_async_scripts($url)
@@ -242,8 +257,6 @@ function thdk_filter_body_class( $wp_classes, $extra_classes )
         $wp_classes = array_diff( $wp_classes, $blacklist );
         array_push($extra_classes, "page-two-columns", "has-sidebar");
     }
-
-
 
     // Filter the body classes
     if (is_archive()) {
